@@ -1,7 +1,15 @@
-function App() {
+import { Route, Switch } from 'react-router-dom'
+
+import Auth from './pages/Auth'
+import Home from './pages/Home'
+
+const App = () => {
 	return (
-		<div className="App">
-			<h1 className='font-semibold text-xl text-center'>Hello World</h1>
+		<div className='App'>
+			<Switch>
+				<Route path='/' exact component={Home} />
+				<Route path='/auth' exact component={Auth} />
+			</Switch>
 		</div>
 	)
 }
