@@ -1,7 +1,9 @@
+import Navbar from "../components/common/Navbar"
+
 const Home = () => {
     return (
-        <div>
-            <h1 className='font-semibold text-xl text-center'>Home Page</h1>
+        <div className='h-screen'>
+            <Navbar />
         </div>
     )
 }

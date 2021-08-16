@@ -1,9 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import ChartCard from '../components/Charts/ChartCard'
 import Navbar from '../components/common/Navbar'
 
-const Charts = () => {
+const Charts = (props) => {
+
+    if(!props.isAuthenticated) {
+        return <Redirect to='/auth' />
+    }
+
     return (
         <div className='min-h-screen'>
             <Navbar />
@@ -39,4 +46,10 @@ const Charts = () => {
     )
 }
 
-export default Charts
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.auth.isAuthenticated
+    }
+}
+
+export default connect(mapStateToProps)(Charts)

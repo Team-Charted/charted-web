@@ -1,6 +1,30 @@
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+import { logoutUser } from '../../actions/auth'
+
+const Navbar = (props) => {
+
+    const authLinks = (
+        <div>
+            <Link to='/charts'>
+                <span className='mx-3 font-semibold hover:text-surface'>Charts</span>
+            </Link>
+
+            <Link to='/'>
+                <span onClick={props.logoutUser} className='ml-3 font-semibold hover:text-surface'>Sign Out</span>
+            </Link>
+        </div>
+    )
+
+    const guestLinks = (
+        <div>
+            <Link to='/auth'>
+                <span className='mx-3 font-semibold hover:text-surface'>Auth</span>
+            </Link>
+        </div>
+    )
+
     return (
         <div className='z-50 px-4 md:px-16 h-14 w-full bg-primary text-white text-lg font-semibold flex justify-between items-center fixed'>
             <div>
@@ -9,18 +33,20 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className='hidden md:block'>
-                <Link to='/'>
-                    <span className='mx-3 font-semibold hover:text-surface'>Home</span>
-                </Link>
-                <Link to='/auth'>
-                    <span className='mx-3 font-semibold hover:text-surface'>Auth</span>
-                </Link>
-                <Link to='/charts'>
-                    <span className='ml-3 font-semibold hover:text-surface'>Charts</span>
-                </Link>
+                {!props.auth.loading && (<>{props.auth.isAuthenticated ? authLinks : guestLinks}</>)}
             </div>
         </div>
     )
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
+
+const mapDispatchToProps = {
+    logoutUser: logoutUser
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
