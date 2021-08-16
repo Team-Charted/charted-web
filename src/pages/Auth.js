@@ -6,7 +6,7 @@ import { loginUser, registerUser } from '../actions/auth'
 
 const Auth = (props) => {
 
-    const [isLoginMode, setIsLoginMode] = useState(false)
+    const [isLoginMode, setIsLoginMode] = useState(true)
 
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
