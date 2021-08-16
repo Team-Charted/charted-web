@@ -8,7 +8,7 @@ const Album = () => {
         <div className='h-screen'>
             <Navbar />
 
-            <div className='h-full pt-14 mx-16'>
+            <div className='h-full pt-14 mx-4 md:mx-16'>
                 <div className='py-4 md:py-8 h-full grid grid-cols-1 md:grid-cols-3 gap-4'>
                     <div className='md:col-span-2 flex flex-col overflow-y-hidden'>
                         <div className='m-2 rounded-lg bg-appleMusicRed p-4 text-center flex flex-col justify-center'>
