@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { getCharts } from '../actions/charts'
 
 import ChartCard from '../components/Charts/ChartCard'
 import Navbar from '../components/common/Navbar'
 
 const Charts = (props) => {
 
-    if(!props.isAuthenticated) {
-        return <Redirect to='/auth' />
-    }
+    useEffect(() => {
+        props.getCharts()
+    }, [])
 
     return (
         <div className='min-h-screen'>
@@ -17,29 +17,17 @@ const Charts = (props) => {
 
             <div className='pt-14 mx-16'>
                 <h1 className='my-10 text-3xl text-center font-semibold'>Trending Charts</h1>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-28'>
-                    <ChartCard
-                        chartName='Billboard Hot 100'
-                        timer='10:10:10'
-                        bgColor='billboardBlue'
-                        prizePool='10000'
-                        entryFee='25'
-                        dateText='Week of 17 July 2021' />
-                    <ChartCard
-                        chartName='Spotify Top 200: Global'
-                        timer='10:10:10'
-                        bgColor='spotifyGreen'
-                        prizePool='10000'
-                        entryFee='25'
-                        dateText='Week of 17 July 2021' />
-                    <ChartCard
-                        chartName='Apple Music Top 100'
-                        timer='10:10:10'
-                        bgColor='appleMusicRed'
-                        prizePool='10000'
-                        entryFee='25'
-                        dateText='Week of 17 July 2021' />
-                </div>
+                {!props.charts.loading &&
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-28'>
+                        {props.charts.charts.map(chart => <ChartCard
+                            chartName={chart.name}
+                            timer='tbd'
+                            bgColor='primary'
+                            prizePool={chart.prizePool}
+                            cost={chart.cost}
+                            nextDate={chart.nextDate} />)}
+                    </div>
+                }
                 <p className='mt-24 text-lg text-center'>More charts coming soon!</p>
             </div>
         </div>
@@ -48,8 +36,13 @@ const Charts = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthenticated: state.auth.isAuthenticated
+        isAuthenticated: state.auth.isAuthenticated,
+        charts: state.charts
     }
 }
 
-export default connect(mapStateToProps)(Charts)
+const mapDispatchToProps = {
+    getCharts: getCharts
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Charts)
