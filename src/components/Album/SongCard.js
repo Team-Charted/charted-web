@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/md'
 
-const SongCard = ({ songName, artist, imageURL, credits, selected }) => {
+const SongCard = ({ songName, artist, imageURL, credits, selected, handler }) => {
     return (
         <div className='pr-4 my-1 mx-auto w-full flex justify-between h-12 md:h-14 bg-surface'>
             <div className='flex'>
@@ -13,9 +13,11 @@ const SongCard = ({ songName, artist, imageURL, credits, selected }) => {
             </div>
             <div className='flex items-center justify-between'>
                 <div className='mr-4 text-xs md:text-lg font-semibold text-text'>{credits}</div>
-                {selected
-                    ? <MdRemoveCircleOutline className='cursor-pointer text-primary h-full text-sm md:text-xl' />
-                    : <MdAddCircleOutline className='cursor-pointer text-primary h-full text-sm md:text-xl' />}
+                <span onClick={handler}>
+                    {selected
+                        ? <MdRemoveCircleOutline className='cursor-pointer text-primary h-full text-sm md:text-xl' />
+                        : <MdAddCircleOutline className='cursor-pointer text-primary h-full text-sm md:text-xl' />}
+                </span>
             </div>
         </div>
     )
