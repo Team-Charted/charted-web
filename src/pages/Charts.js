@@ -20,9 +20,9 @@ const Charts = (props) => {
                 {!props.charts.loading &&
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-28'>
                         {props.charts.charts.map(chart => <ChartCard
+                            key={chart._id}
+                            chartId={chart._id}
                             chartName={chart.name}
-                            timer='tbd'
-                            bgColor='primary'
                             prizePool={chart.prizePool}
                             cost={chart.cost}
                             nextDate={chart.nextDate} />)}

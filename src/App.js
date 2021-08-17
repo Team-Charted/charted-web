@@ -27,7 +27,7 @@ const App = () => {
 				<Route path='/' exact component={Home} />
 				<Route path='/auth' exact component={Auth} />
 				<AuthRoute path='/charts' exact component={Charts} />
-				<AuthRoute path='/album' component={Album} />
+				<AuthRoute path='/charts/:chart_id' exact component={Album} />
 				<AuthRoute path='/account' exact component={Account} />
 			</Switch>
 		</div>

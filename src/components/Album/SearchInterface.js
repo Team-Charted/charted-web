@@ -40,6 +40,7 @@ const SearchInterface = () => {
             </form>
             <div className='h-full flex flex-col overflow-y-scroll'>
                 {loading ? <p>loading...</p> : searchResults.map(song => <SongCard
+                    key={song.imageURL}
                     songName={song.title}
                     artist={song.artist}
                     imageURL={song.imageURL}

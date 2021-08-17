@@ -8,9 +8,9 @@ module.exports = {
 			background: '#16161A',
 			surface: '#1C1C1F',
 			text: '#94A1B2',
-			billboardBlue: '#30C1F2',
-			spotifyGreen: '#27A370',
-			appleMusicRed: '#E12036',
+			billboard: '#30C1F2',
+			spotify: '#27A370',
+			apple: '#E12036',
 			white: '#FFF',
 			black: '#000'
 		},
