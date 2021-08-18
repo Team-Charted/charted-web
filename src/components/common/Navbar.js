@@ -10,7 +10,9 @@ const Navbar = (props) => {
             <Link to='/charts'>
                 <span className='mx-3 font-semibold hover:text-surface'>Charts</span>
             </Link>
-
+            <Link to='/account'>
+                <span className='mx-3 font-semibold hover:text-surface'>Account</span>
+            </Link>
             <Link to='/'>
                 <span onClick={props.logoutUser} className='ml-3 font-semibold hover:text-surface'>Sign Out</span>
             </Link>

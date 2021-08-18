@@ -12,7 +12,8 @@ module.exports = {
 			spotify: '#27A370',
 			apple: '#E12036',
 			white: '#FFF',
-			black: '#000'
+			black: '#000',
+			warning: '#EED202'
 		},
 		fontFamily: {
 			'manrope': ['Manrope', 'sans-serif']

@@ -25,7 +25,8 @@ const Charts = (props) => {
                             chartName={chart.name}
                             prizePool={chart.prizePool}
                             cost={chart.cost}
-                            nextDate={chart.nextDate} />)}
+                            endTime={chart.endTime}
+                            date={chart.date} />)}
                     </div>
                 }
                 <p className='mt-24 text-lg text-center'>More charts coming soon!</p>

@@ -115,7 +115,7 @@ const Album = (props) => {
                     <div className='md:col-span-2 flex flex-col overflow-y-hidden'>
                         <div className={`m-1 md:m-2 rounded-lg bg-${chartDetails.name.split(' ')[0].toLowerCase()} p-2 md:p-4 text-center flex flex-col justify-center`}>
                             <h1 className='font-semibold text-sm md:text-xl'>{chartDetails.name}</h1>
-                            <h4 className='text-xs md:text-lg'>{chartDetails.nextDate}</h4>
+                            <h4 className='text-xs md:text-lg'>{chartDetails.date}</h4>
                         </div>
                         <SearchInterface handler={addSongToAlbum} />
                     </div>
