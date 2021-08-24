@@ -10,6 +10,8 @@ import setAuthToken from './util/setAuthToken'
 import store from './store'
 import { loadUser } from './actions/auth'
 import AuthRoute from './util/AuthRoute'
+import Results from './pages/Results'
+import Result from './pages/Result'
 
 if(localStorage.token) {
 	setAuthToken(localStorage.token)
@@ -27,6 +29,8 @@ const App = () => {
 				<Route path='/' exact component={Home} />
 				<Route path='/auth' exact component={Auth} />
 				<AuthRoute path='/charts' exact component={Charts} />
+				<AuthRoute path='/results' exact component={Results} />
+				<AuthRoute path='/results/:result_id' exact component={Result} />
 				<AuthRoute path='/charts/:chart_id' exact component={Album} />
 				<AuthRoute path='/account' exact component={Account} />
 			</Switch>

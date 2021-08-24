@@ -10,6 +10,9 @@ const Navbar = (props) => {
             <Link to='/charts'>
                 <span className='mx-3 font-semibold hover:text-surface'>Charts</span>
             </Link>
+            <Link to='/results'>
+                <span className='mx-3 font-semibold hover:text-surface'>Results</span>
+            </Link>
             <Link to='/account'>
                 <span className='mx-3 font-semibold hover:text-surface'>Account</span>
             </Link>
