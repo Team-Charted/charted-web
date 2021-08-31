@@ -121,7 +121,7 @@ const Album = (props) => {
                     </div>
                     <div className='flex flex-col overflow-y-hidden'>
                         <div className='flex m-2'>
-                            <div className='w-3/4  rounded-lg bg-primary p-2 md:p-4 text-center flex flex-col justify-center'>
+                            <div className='w-3/4 rounded-lg bg-primary p-2 md:p-4 text-center flex flex-col justify-center'>
                                 <h1 className='font-semibold text-sm md:text-xl'>Credits: {credits}</h1>
                             </div>
                             <button onClick={saveAlbum} className='ml-2 w-1/4 rounded-lg bg-primary p-2 md:p-4 text-center font-semibold text-sm md:text-xl'>SAVE</button>

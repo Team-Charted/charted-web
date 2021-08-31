@@ -9,7 +9,7 @@ const ResultCard = ({ resultId, chartName, prizePool, cost, date }) => {
     return (    
         <div className='mx-auto w-full h-52'>
             <div className={`h-3/4 p-4 flex flex-col justify-around rounded-t-lg bg-${chartName.split(' ')[0].toLowerCase()}`}>
-                <h1 className='font-semibold text-lg text-center'>{chartName}</h1>
+                <h1 className='font-bold text-lg text-center'>{chartName}</h1>
                 <div className='w-full flex justify-between'>
                     <span className=''><IoTrophy className='inline' /> {prizePool}</span>
                     <span className=''><IoPricetag className='inline' /> {cost}</span>

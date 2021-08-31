@@ -26,7 +26,7 @@ const ChartCard = ({ chartId, chartName, prizePool, cost, date, endTime }) => {
     return (    
         <div className='mx-auto w-full h-52'>
             <div className={`h-3/4 p-4 flex flex-col justify-around rounded-t-lg bg-${chartName.split(' ')[0].toLowerCase()}`}>
-                <h1 className='font-semibold text-lg text-center'>{chartName}</h1>
+                <h1 className='font-bold text-lg text-center'>{chartName}</h1>
                 <h3 className='font-semibold text-lg text-center'>{endTime}</h3>
                 <div className='w-full flex justify-between'>
                     <span className=''><IoTrophy className='inline' /> {prizePool}</span>
@@ -35,7 +35,7 @@ const ChartCard = ({ chartId, chartName, prizePool, cost, date, endTime }) => {
             </div>
             <div className='h-1/4 p-4 rounded-b-lg flex justify-between items-center bg-surface'>
                 <span>{date}</span>
-                {!loading && <Link to={`/charts/${chartId}`}>{album.length == 0 ? <MdAddCircleOutline /> : <MdEdit />}</Link>}
+                {!loading && <Link to={`/charts/${chartId}`}>{album.length == 0 ? <MdAddCircleOutline className='text-lg' /> : <MdEdit className='text-lg' />}</Link>}
             </div>
         </div>
     )

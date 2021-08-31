@@ -28,7 +28,7 @@ const Results = (props) => {
                             date={result.date} />)}
                     </div>
                 }
-                <p className='mt-24 text-lg text-center'>More charts coming soon!</p>
+                {/* <p className='mt-24 text-lg text-center'>More charts coming soon!</p> */}
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ const LeaderboardCard = ({ index, username, albumName, points }) => {
                 <h1 className='my-auto mx-4 text-xs md:text-lg font-semibold text-text'>{index}</h1>
                 <div className='flex flex-col justify-center'>
                     <h1 className='font-semibold text-2xs md:text-sm'>{username}</h1>
-                    <h4 className='text-3xs md:text-xs text-text'>{albumName}</h4>
+                    {/* <h4 className='text-3xs md:text-xs text-text'>{albumName}</h4> */}
                 </div>
             </div>
             <div className='flex items-center justify-between'>

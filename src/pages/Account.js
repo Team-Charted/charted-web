@@ -28,16 +28,16 @@ const Account = (props) => {
                             <h1 className='text-2xl md:text-4xl font-medium'>₹{props.user.coins}</h1>
                             <div className='w-full flex justify-around'>
                                 <div className='cursor-pointer flex flex-col items-center'>
-                                    <FiArrowDownLeft className='font-bold text-lg md:text-3xl' />
+                                    <div className='bg-surface rounded-full flex flex-col justify-center items-center w-12 h-12'><FiArrowDownLeft className='font-bold text-lg md:text-3xl' /></div>
                                     <h6 className='text-3xs md:text-base'>Add</h6>
                                 </div>
                                 {props.user.fundAccountID &&
                                     <div className='cursor-pointer flex flex-col items-center'>
-                                        <FiArrowUpRight className='font-bold text-lg md:text-3xl' />
+                                        <div className='bg-surface rounded-full flex flex-col justify-center items-center w-12 h-12'><FiArrowUpRight className='font-bold text-lg md:text-3xl' /></div>
                                         <h6 className='text-3xs md:text-base'>Withdraw</h6>
                                     </div>}
                                 <div className='cursor-pointer flex flex-col items-center'>
-                                    <RiHistoryFill className='font-bold text-lg md:text-3xl' />
+                                    <div className='bg-surface rounded-full flex flex-col justify-center items-center w-12 h-12'><RiHistoryFill className='font-bold text-lg md:text-3xl' /></div>
                                     <h6 className='text-3xs md:text-base'>History</h6>
                                 </div>
                             </div>
