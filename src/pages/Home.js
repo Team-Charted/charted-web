@@ -1,11 +1,15 @@
-import Navbar from "../components/common/Navbar"
+import { connect } from "react-redux"
+import { Redirect } from "react-router-dom"
 
-const Home = () => {
-    return (
-        <div className='h-screen'>
-            <Navbar />
-        </div>
-    )
+const Home = (props) => {
+    if(props.user) return <Redirect to='charts' />
+    else return <Redirect to='auth' />
 }
 
-export default Home
+const mapStateToProps = (state) => {
+    return {
+        user: state.auth.user
+    }
+}
+
+export default connect(mapStateToProps)(Home)

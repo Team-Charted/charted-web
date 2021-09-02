@@ -40,7 +40,7 @@ const SearchInterface = ({ handler }) => {
     return (
         <div className='h-full px-2 flex flex-col overflow-y-hidden'>
             <form onSubmit={searchSongs}>
-                <input ref={searchQueryRef} id='name' className='my-2 mx-auto w-full block bg-transparent border-2 border-text rounded-lg outline-none px-3 py-2 text-3xs md:text-2xs' type='text' placeholder='Search for a song...'></input>
+                <input ref={searchQueryRef} id='name' className='my-2 mx-auto w-full block bg-transparent border-2 border-text rounded-xl outline-none px-3 py-2 text-3xs md:text-2xs' type='text' placeholder='Search for a song...'></input>
             </form>
             <div className='h-full flex flex-col overflow-y-scroll'>
                 {loading ? <p>loading...</p> : searchResults.map((song, i) => <SongCard

@@ -16,9 +16,7 @@ const Navbar = (props) => {
             <Link to='/account'>
                 <span className='mx-3 hover:text-surface'>Account</span>
             </Link>
-            <Link to='/'>
-                <span onClick={props.logoutUser} className='ml-3 hover:text-surface'>Sign Out</span>
-            </Link>
+            {/* <span className='ml-3 hover:text-surface'>₹{(props.auth.user.coins).toFixed(2)}</span> */}
         </div>
     )
 
@@ -50,8 +48,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = {
-    logoutUser: logoutUser
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default connect(mapStateToProps)(Navbar)

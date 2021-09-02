@@ -113,7 +113,7 @@ const Album = (props) => {
             <div className='h-full pt-14 mx-4 md:mx-16'>
                 <div className='py-2 md:py-8 h-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4'>
                     <div className='md:col-span-2 flex flex-col overflow-y-hidden'>
-                        <div className={`m-1 md:m-2 rounded-lg bg-${chartDetails.name.split(' ')[0].toLowerCase()} p-2 md:p-4 text-center flex flex-col justify-center`}>
+                        <div className={`m-1 md:m-2 rounded-xl bg-${chartDetails.name.split(' ')[0].toLowerCase()} p-2 md:p-4 text-center flex flex-col justify-center`}>
                             <h1 className='font-semibold text-sm md:text-xl'>{chartDetails.name}</h1>
                             <h4 className='text-xs md:text-lg'>{chartDetails.date}</h4>
                         </div>
@@ -121,10 +121,10 @@ const Album = (props) => {
                     </div>
                     <div className='flex flex-col overflow-y-hidden'>
                         <div className='flex m-2'>
-                            <div className='w-3/4 rounded-lg bg-primary p-2 md:p-4 text-center flex flex-col justify-center'>
+                            <div className='w-3/4 rounded-xl bg-primary p-2 md:p-4 text-center flex flex-col justify-center'>
                                 <h1 className='font-semibold text-sm md:text-xl'>Credits: {credits}</h1>
                             </div>
-                            <button onClick={saveAlbum} className='ml-2 w-1/4 rounded-lg bg-primary p-2 md:p-4 text-center font-semibold text-sm md:text-xl'>SAVE</button>
+                            <button onClick={saveAlbum} className='ml-2 w-1/4 rounded-xl bg-primary p-2 md:p-4 text-center font-semibold text-sm md:text-xl'>SAVE</button>
                         </div>
                         <h1 className='text-center text-xs md:text-lg font-semibold my-1'>My Album</h1>
                         <div className='p-2 h-full flex flex-col overflow-y-scroll'>

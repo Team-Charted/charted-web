@@ -25,7 +25,7 @@ const ChartCard = ({ chartId, chartName, prizePool, cost, date, endTime }) => {
 
     return (    
         <div className='mx-auto w-full h-52'>
-            <div className={`h-3/4 p-4 flex flex-col justify-around rounded-t-lg bg-${chartName.split(' ')[0].toLowerCase()}`}>
+            <div className={`h-3/4 p-4 flex flex-col justify-around rounded-t-xl bg-${chartName.split(' ')[0].toLowerCase()}`}>
                 <h1 className='font-bold text-lg text-center'>{chartName}</h1>
                 <h3 className='font-semibold text-lg text-center'>{endTime}</h3>
                 <div className='w-full flex justify-between'>

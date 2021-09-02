@@ -54,7 +54,7 @@ const Result = (props) => {
             <div className='h-full pt-14 mx-4 md:mx-16'>
                 <div className='py-2 md:py-8 h-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4'>
                     <div className='md:col-span-2 flex flex-col overflow-y-hidden'>
-                        <div className={`m-1 md:m-2 rounded-lg bg-${resultDetails.chart.name.split(' ')[0].toLowerCase()} p-2 md:p-4 text-center flex flex-col justify-center`}>
+                        <div className={`m-1 md:m-2 rounded-xl bg-${resultDetails.chart.name.split(' ')[0].toLowerCase()} p-2 md:p-4 text-center flex flex-col justify-center`}>
                             <h1 className='font-semibold text-sm md:text-xl'>{resultDetails.chart.name}</h1>
                             <h4 className='text-xs md:text-lg'>{resultDetails.date}</h4>
                         </div>

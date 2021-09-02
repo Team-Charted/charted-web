@@ -19,9 +19,10 @@ if(localStorage.token) {
 
 const App = () => {
 
-	useEffect(() => {
+	useEffect(async () => {
+		console.log("ok");
 		store.dispatch(loadUser())
-	}, [])
+	  })
 
 	return (
 		<div className='App bg-background text-white'>

@@ -38,7 +38,7 @@ const Auth = (props) => {
         <div className='min-h-screen py-10 bg-surface text-white flex flex-col justify-center'>
             <div className='h-full grid grid-cols-1 md:grid-cols-2 gap-2'>
                 <div className='h-full flex flex-row items-center'>
-                    <div className='mx-auto w-3/4 md:w-1/2 py-7 px-5 border-2 border-text rounded-lg'>
+                    <div className='mx-auto w-3/4 md:w-1/2 py-7 px-5 border-2 border-text rounded-xl'>
                         <h1 className='text-2xl text-primary font-semibold text-center'>charted</h1>
                         {!isLoginMode ? <h1 className='text-2xs text-text'>Welcome!</h1> : <h1 className='text-2xs text-text'>Welcome back!</h1>}
                         {!isLoginMode ? <h4 className='text-xs my-1.5'>Dive right in and start playing.</h4> : <h4 className='text-xs my-1.5'>Let's sign you back in.</h4>}
