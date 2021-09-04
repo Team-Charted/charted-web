@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000",
+  "proxy": "https://charted-server.herokuapp.com",
   "name": "charted-web",
   "version": "0.1.0",
   "private": true,

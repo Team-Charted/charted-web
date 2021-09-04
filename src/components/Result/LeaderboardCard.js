@@ -12,7 +12,7 @@ const LeaderboardCard = ({ index, username, albumName, points }) => {
                 </div>
             </div>
             <div className='flex items-center justify-between'>
-                <div className='mr-4 text-xs md:text-lg font-semibold text-text'>{points}</div>
+                <div className='mr-4 text-xs md:text-lg font-semibold text-text'>{points.toFixed(2)}</div>
             </div>
         </div>
     )

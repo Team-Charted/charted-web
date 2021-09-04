@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../util/axios'
 import React, { useRef, useState } from 'react'
 
 import SongCard from './SongCard'
@@ -12,21 +12,17 @@ const SearchInterface = ({ handler }) => {
     const searchSongs = async (e) => {
         setLoading(true)
         e.preventDefault()
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+
         const body = JSON.stringify({
             queryString: searchQueryRef.current.value
         })
         try {
-            const res = await axios.post('/api/searches', body, config)
+            const res = await axios.post('/api/searches', body)
             setLoading(false)
             setSearchResults(res.data)
-        } catch(err) {
+        } catch (err) {
             const errors = err.response.data.errors
-    
+
             if (errors) {
                 console.log(errors)
             }

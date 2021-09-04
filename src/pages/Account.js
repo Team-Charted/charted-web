@@ -7,7 +7,7 @@ import { RiHistoryFill } from 'react-icons/ri'
 
 import Navbar from '../components/common/Navbar'
 import { logoutUser } from '../actions/auth'
-import axios from 'axios'
+import axios from '../util/axios'
 
 const Account = (props) => {
     function loadScript(src) {
@@ -34,17 +34,12 @@ const Account = (props) => {
             return;
         }
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
         const body = JSON.stringify({
             amount: 100
         });
 
         try {
-            const result = await axios.post('/api/transactions/add', body, config);
+            const result = await axios.post('/api/transactions/add', body);
 
             // Getting the order details back
             const { amount, id: order_id, currency } = result.data;
@@ -64,15 +59,12 @@ const Account = (props) => {
                         razorpaySignature: response.razorpay_signature,
                     };
 
-                    const config = {
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    };
+                    const result = await axios.post('/api/transactions/add/success', data);
 
-                    const result = await axios.post('/api/transactions/add/success', data, config);
-
-                    if (result.status == 200) window.location.reload()
+                    if (result.status == 200) {
+                        alert('Successfully added ₹100!')
+                        window.location.reload()
+                    }
                 },
                 prefill: {
                     name: props.user.name,
@@ -99,18 +91,17 @@ const Account = (props) => {
     }
 
     async function withdrawMoney() {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+
         const body = JSON.stringify({
             amount: 100
         });
 
         try {
-            const result = await axios.post('/api/transactions/withdraw', body, config);
-            if (result.status == 200) window.location.reload();
+            const result = await axios.post('/api/transactions/withdraw', body);
+            if (result.status == 200) {
+                alert("Successfully withdrew ₹100!")
+                window.location.reload()
+            }
 
         } catch (err) {
             const errors = err.response.data.errors
